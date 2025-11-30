@@ -124,27 +124,27 @@ export default function TimelinePage() {
             {timelineEvents.map((event, index) => (
               <div key={index}>
                 {/* Timeline Item */}
-                <div className={\`relative flex items-start \${event.side === 'right' ? 'justify-end' : 'justify-start'} mb-12\`}>
+                <div className={`relative flex items-start ${event.side === 'right' ? 'justify-end' : 'justify-start'} mb-12`}>
                   {event.side === 'right' && <div className="hidden md:block w-1/2"></div>}
 
                   <div className="absolute left-1/2 top-14 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-[#f5f7f8] dark:border-[#101a22]" style={{backgroundColor: event.dotColor}}></div>
 
-                  <div className={\`w-full md:w-1/2 \${event.side === 'right' ? 'pl-0 md:pl-10' : 'pr-0 md:pr-10'}\`}>
+                  <div className={`w-full md:w-1/2 ${event.side === 'right' ? 'pl-0 md:pl-10' : 'pr-0 md:pr-10'}`}>
                     <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800">
-                      <p className={\`text-5xl font-black text-slate-300 dark:text-slate-700 \${event.side === 'left' ? 'text-right' : ''}\`}>{event.year}</p>
-                      <div className={\`flex items-center gap-4 mt-2 \${event.side === 'left' ? 'flex-row-reverse md:flex-row' : ''}\`}>
+                      <p className={`text-5xl font-black text-slate-300 dark:text-slate-700 ${event.side === 'left' ? 'text-right' : ''}`}>{event.year}</p>
+                      <div className={`flex items-center gap-4 mt-2 ${event.side === 'left' ? 'flex-row-reverse md:flex-row' : ''}`}>
                         <img className="w-16 h-16 rounded-full object-cover border-2 border-slate-200 dark:border-slate-700" alt={event.title} src={event.image} />
                         <div className={event.side === 'left' ? 'flex-1 text-left md:text-right' : ''}>
-                          <div className={\`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold \${categoryStyles[event.categoryColor]}\`}>
+                          <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${categoryStyles[event.categoryColor]}`}>
                             {event.category}
                           </div>
                           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-50 mt-1">{event.title}</h3>
                         </div>
                       </div>
-                      <p className={\`text-slate-600 dark:text-slate-400 mt-3 text-sm \${event.side === 'left' ? 'text-right md:text-left' : ''}\`}>
+                      <p className={`text-slate-600 dark:text-slate-400 mt-3 text-sm ${event.side === 'left' ? 'text-right md:text-left' : ''}`}>
                         {event.description}
                       </p>
-                      <a className={\`text-[#1f94f4] font-bold text-sm mt-4 hover:underline \${event.side === 'left' ? 'block text-right md:text-left' : 'inline-block'}\`} href="#">
+                      <a className={`text-[#1f94f4] font-bold text-sm mt-4 hover:underline ${event.side === 'left' ? 'block text-right md:text-left' : 'inline-block'}`} href="#">
                         En savoir plus →
                       </a>
                     </div>
